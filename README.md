@@ -46,6 +46,21 @@ Developed by: HARI KRISHNAN S
 
 RegisterNumber: 24006616
 
+```
+module exp9(T,clk,Q,Qbar);
+input T,clk;
+output reg Q;
+output reg Qbar;
+initial Q=0;
+initial Qbar=1;
+always @(posedge clk)
+begin 
+Q=(T&(~Q))|((~T)&Q);
+Qbar=~Q;
+end
+endmodule
+```
+
 **RTL LOGIC FOR FLIPFLOPS**
 
 ![image](https://github.com/user-attachments/assets/aa04c44b-bd64-4d55-a907-cc54f85cad97)
